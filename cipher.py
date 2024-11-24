@@ -9,6 +9,21 @@ text = 'Hello Zaira'
 shift = 3
 
 def caesar(message, offset):
+    '''
+    Encrypt a message using a Caesar cipher.
+
+    Parameters
+    ----------
+    message : str
+        message to be encrypted using cipher.
+    offset : int
+        number of positions in the alphabet to offset each character.
+
+    Returns
+    -------
+    None.
+
+    '''
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     encrypted_text = ''
 
@@ -57,6 +72,26 @@ text = 'mrttaqrhknsw ih puggrur'
 custom_key = 'happycoding'
 
 def vigenere(message, key, direction=1):
+    '''
+    Encrypt or decrypt message using offset determined by characters in a key
+    rather than a fixed integer like in Caesar cipher
+
+    Parameters
+    ----------
+    message : str
+        text to encrypt/decrypt.
+    key : str
+        text used to encrypt/decrypt message.
+    direction : int, optional
+        Indicates whether to encrypt or decrypt message using the key. 1 is 
+        encrypt, -1 is decrypt. The default is 1.
+
+    Returns
+    -------
+    final_message : str
+        DESCRIPTION.
+
+    '''
     key_index = 0
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     final_message = ''
@@ -80,9 +115,41 @@ def vigenere(message, key, direction=1):
     return final_message
 
 def encrypt(message, key):
+    '''
+    
+
+    Parameters
+    ----------
+    message : str
+        text to encrypt.
+    key : str
+        text used to encrypt message.
+
+    Returns
+    -------
+    str
+        Output of vigenere() when encrypting.
+
+    '''
     return vigenere(message, key)
     
 def decrypt(message, key):
+    '''
+    
+
+    Parameters
+    ----------
+    message : str
+        text to decrypt.
+    key : str
+        text used to decrypt message.
+
+    Returns
+    -------
+    str
+        Output of vigenere() when decrypting.
+
+    '''
     return vigenere(message, key, -1)
 
 print(f'\nEncrypted text: {text}')
